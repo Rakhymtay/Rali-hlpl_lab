@@ -117,9 +117,9 @@ Token Token_stream::get(){
     			cin.putback(ch);
     			if (s == declkey) return Token{let};
     			
-    			else if(s == quitkey) return Token(quit);
-    			else if(s == square) return Token('s');
-    			else if(s == power) return Token('p');
+    			else if(s == quitkey) return Token(quit); // chapter 7
+    			else if(s == square) return Token('s');   // chapter 7
+    			else if(s == power) return Token('p');    // chapter 7
     			
     			else if (is_declared(s))
     				return Token(number, get_value(s));
@@ -162,7 +162,7 @@ double primary(){
 			return - primary();
 		case '+':
 			return primary();
-		case 's': 
+		case 's': // chapter 7 (Square root) 
 		{
 			char ch;
 			double SquareRoot;
@@ -180,7 +180,7 @@ double primary(){
 			else error("The function have to end with )");
 			
 		}	
-		case 'p':
+		case 'p':  // chapter 7 (Power)
 		{
 			char ch;
 			double Power;
